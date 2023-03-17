@@ -36,7 +36,22 @@ export class UserService {
             where:{
                 id:userId
             },
-            relations:['addresses']
+            relations:{
+                addresses:{
+                    city:{
+                        state:true
+                    }
+                }
+            }
         })
     }
+
+    async findUserByemail(email:string):Promise<UserEntity>{
+        const user = await this.userRepository.findOne({where:{email}})
+        if(!user){
+            throw new NotFoundException('user email not found')
+        }
+        return user
+    }
+
 }
