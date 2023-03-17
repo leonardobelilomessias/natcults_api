@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { UserEntity } from 'src/user/entities/user.entity';
 import { Repository } from 'typeorm';
 import { StateEntity } from './entitites/state.entity';
 
@@ -14,4 +15,7 @@ export class StateService {
     async getAllState(): Promise<StateEntity[]> {
         return this.userRepository.find()
     }
+
+
+
 }

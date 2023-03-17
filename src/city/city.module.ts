@@ -10,6 +10,7 @@ import { CityEntity } from './entities/city.entity';
   CacheModule
   ],
   controllers: [CityController],
-  providers: [CityService]
+  providers: [CityService],
+  exports:[CityService]
 })
 export class CityModule {}
