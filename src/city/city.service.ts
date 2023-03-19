@@ -2,7 +2,7 @@ import { Injectable , CacheModule, CACHE_MANAGER, Inject, NotFoundException} fro
 import { InjectRepository } from '@nestjs/typeorm';
 import { Cache } from 'cache-manager';
 import { NotFoundError } from 'rxjs';
-import { CacheService } from 'src/cache/cache.service';
+import { CacheService } from '../cache/cache.service';
 import { Repository } from 'typeorm';
 import { CityEntity } from './entities/city.entity';
 

@@ -1,5 +1,5 @@
-import { AddressEntity } from "src/address/address.entity"
-import { StateEntity } from "src/state/entitites/state.entity"
+import { AddressEntity } from "../../address/address.entity"
+import { StateEntity } from "../../state/entitites/state.entity"
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 

@@ -1,5 +1,5 @@
 import { isInt, IsInt, IsOptional, IsString } from "class-validator";
-import { ReturnCityDto } from "src/city/dtos/returnCity.dto";
+import { ReturnCityDto } from "../../city/dtos/returnCity.dto";
 
 import { AddressEntity } from "../address.entity";
 
