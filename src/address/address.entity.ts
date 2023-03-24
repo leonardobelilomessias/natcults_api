@@ -27,7 +27,7 @@ export class AddressEntity{
     createdAt:Date
 
     @UpdateDateColumn({name:'updated_at'})
-    updateAt:Date
+    updatedAt:Date
 
     @ManyToOne(() => UserEntity, (user) => user.addresses)
     @JoinColumn({name:'user_id', referencedColumnName:'id'})

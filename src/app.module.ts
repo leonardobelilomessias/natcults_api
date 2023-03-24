@@ -13,7 +13,8 @@ import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
-import { User2Service } from './user2/user2.service';
+import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -28,11 +29,11 @@ import { User2Service } from './user2/user2.service';
     entities:[`${__dirname}/**/*.entity{.js,.ts}`],
     migrations:[`${__dirname}/migration/{*.js,.ts}`],
     migrationsRun:true,
-  }),UserModule, StateModule, CityModule, AddressModule, CacheModule, AuthModule,JwtModule],
+  }),UserModule, StateModule, CityModule, AddressModule, CacheModule, AuthModule,JwtModule, CategoryModule, ProductModule],
   controllers: [],
   providers: [  {
     provide: APP_GUARD,
     useClass: RolesGuard,
-  }, User2Service,],
+  }, ],
 })
 export class AppModule {}

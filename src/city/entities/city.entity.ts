@@ -1,29 +1,29 @@
 import { AddressEntity } from "../../address/address.entity"
-import { StateEntity } from "../../state/entitites/state.entity"
+import { StateEntity } from "../../state/entities/state.entity"
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 
 @Entity('city')
-export class CityEntity{
+export class CityEntity {
     @PrimaryGeneratedColumn('rowid')
-    id:number
+    id: number
 
-    @Column({name:"name", nullable:true})
-    name:string
-    
-    @Column({name:"state_id", nullable:false})
-    stateId:number
+    @Column({ name: "name", nullable: true })
+    name: string
 
-    @CreateDateColumn({name:'created_at'})
-    createdAt:Date
+    @Column({ name: "state_id", nullable: false })
+    stateId: number
 
-    @UpdateDateColumn({name:'updated_at'})
-    updateAt:Date
+    @CreateDateColumn({ name: 'created_at' })
+    createdAt: Date
 
-    @OneToMany(()=>AddressEntity,(address)=> address.city)
+    @UpdateDateColumn({ name: 'updated_at' })
+    updatedAt: Date
+
+    @OneToMany(() => AddressEntity, (address) => address.city)
     addresses?: AddressEntity[]
 
     @ManyToOne(() => StateEntity, (state) => state.cities)
-    @JoinColumn({name:'state_id', referencedColumnName:'id'})
+    @JoinColumn({ name: 'state_id', referencedColumnName: 'id' })
     state?: StateEntity
 }
